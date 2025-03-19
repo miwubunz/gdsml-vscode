@@ -1,0 +1,73 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "GDSS",
+	"scopeName": "source.gdss",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#properties"
+		},
+		{
+			"include": "#values"
+		}
+	],
+	"repository": {
+		"comments": {
+			"name": "comment.gdss",
+			"patterns": [{
+				"name": "comment.line.gdss",
+				"match": "\\//.*"
+			}, {
+				"name": "comment.block.gdss",
+				"begin": "/\\*",
+				"end": "\\*/"
+			}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.gdss",
+				"match": "\\b(true|false)\\b"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double.gdss",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.gdss",
+					"match": "\\\\."
+				}
+			]
+		},
+		"numbers": {
+			"name": "constant.numeric.gdss",
+			"match": "\\b\\d+(\\.\\d+)?\\b"
+		},
+		"properties": {
+			"match": "\\.(\\w+)(?:\\s+(\\w+))?\\s*",
+			"captures": {
+			  "1": { "name": "entity.name.function.gdss" },
+			  "2": { "name": "entity.name.tag" }
+			}
+		},
+		"values": {
+			"match": "(?m)^\\s*([\\w\\/-]+)\\s*:\\s*(.+?)\\s*;",
+			"captures": {
+				"1": { "name": "entity.other.attribute-name" },
+				"2": { "name": "entity.name.function.gdss" }
+			}
+		}
+	}
+}

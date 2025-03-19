@@ -1,0 +1,73 @@
+{
+  "name": "gdsml",
+  "displayName": "GDSML-vscode",
+  "description": "syntax hightlighting for GDSML and GDSS",
+  "publisher": "miwubunz",
+  "version": "0.0.1",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.54.0"
+  },
+  "keywords": [
+    "syntax",
+    "highlighting",
+    "GDSS",
+    "GDSML",
+    "godot",
+    "markup",
+    "style"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miwubunz/gdsml-vscode"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "gdss",
+        "aliases": [
+          "GDSS",
+          "gdss"
+        ],
+        "extensions": [
+          "gdss"
+        ],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "gdsml",
+        "aliases": [
+          "GDSML",
+          "gdsml"
+        ],
+        "extensions": [
+          "gdsml"
+        ]
+      }
+    ],
+    "grammars": [
+      {
+        "language": "gdss",
+        "scopeName": "source.gdss",
+        "path": "./syntaxes/gdss.tmLanguage.json"
+      },
+      {
+        "language": "gdsml",
+        "scopeName": "source.gdsml",
+        "path": "./syntaxes/gdsml.tmLanguage.json"
+      }
+    ],
+    "snippets": []
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "vscode": "^1.1.37"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10"
+  }
+}

@@ -1,0 +1,22 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "GDSML",
+	"scopeName": "source.gdsml",
+	"patterns": [
+		{
+			"include": "#values"
+		}
+	],
+	"repository": {
+		"values": {
+			"match": "(<!--.*?-->)|<\\/?(\\w+)|(\\w+)=|\"([^\"]*)\"|(\\/>)|(?<=>)([^<]+)",
+			"captures": {
+				"1": { "name": "comment.block.gdsml" },
+				"2": { "name": "entity.other.attribute-name" },
+                "3": { "name": "entity.name.tag" },
+                "4": { "name": "entity.name.function" },
+                "5": { "name": "entity.name.type" }
+			}
+		}
+	}
+}
